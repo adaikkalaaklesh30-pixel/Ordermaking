@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard — SpiceFusion</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="page-loader"><div class="loader-ring"></div></div>
+
+<!-- Top Bar -->
+<header class="admin-topbar">
+  <div class="al-logo-sm"><span>🌶️</span> SpiceFusion Admin</div>
+  <div class="admin-user">
+    <span id="admin-email-display"></span>
+    <button id="logout-btn">Sign Out</button>
+  </div>
+</header>
+
+<!-- Dashboard shell -->
+<div class="admin-dashboard" id="admin-dashboard">
+
+  <!-- Sidebar / Tabs -->
+  <nav class="admin-sidebar" aria-label="Admin navigation">
+    <div class="admin-sidebar-title">Dashboard</div>
+    <button class="admin-tab active" data-panel="panel-orders">
+      <span class="tab-icon">📋</span> Orders
+    </button>
+    <button class="admin-tab" data-panel="panel-products">
+      <span class="tab-icon">🍽️</span> Products
+    </button>
+    <button class="admin-tab" data-panel="panel-messages">
+      <span class="tab-icon">✉️</span> Messages
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="admin-content">
+
+    <!-- ── Orders Panel ── -->
+    <section class="admin-panel active" id="panel-orders">
+      <div class="admin-panel-header">
+        <h2>Customer Orders</h2>
+        <span style="color:var(--mid); font-size:0.85rem;">Live updates — refreshes automatically</span>
+      </div>
+      <div class="admin-stat-row">
+        <div class="admin-stat-card">
+          <div class="asc-val" id="orders-count">—</div>
+          <div class="asc-label">Total Orders</div>
+        </div>
+      </div>
+      <div class="orders-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Phone</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody">
+            <tr><td colspan="7" class="empty-row">Loading orders…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── Products Panel ── -->
+    <section class="admin-panel" id="panel-products">
+      <div class="admin-panel-header">
+        <h2>Products</h2>
+        <button class="btn-primary" onclick="openAddProduct()" style="font-size:0.85rem; padding:10px 18px;">+ Add Product</button>
+      </div>
+      <div class="admin-stat-row">
+        <div class="admin-stat-card">
+          <div class="asc-val" id="products-count">—</div>
+          <div class="asc-label">Total Products</div>
+        </div>
+      </div>
+      <div id="products-admin-list">
+        <p class="empty-row">Loading products…</p>
+      </div>
+    </section>
+
+    <!-- ── Messages Panel ── -->
+    <section class="admin-panel" id="panel-messages">
+      <div class="admin-panel-header">
+        <h2>Contact Messages</h2>
+        <span style="color:var(--mid); font-size:0.85rem;"><span id="messages-count">0</span> total</span>
+      </div>
+      <div id="messages-list">
+        <p class="empty-row">Loading messages…</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Add/Edit Product Modal -->
+<div class="modal-overlay" id="product-modal" role="dialog" aria-modal="true" aria-label="Product editor">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="pm-title">Add Product</h3>
+      <button class="modal-close" onclick="closeProductModal()">✕</button>
+    </div>
+    <form class="pm-form" id="product-form">
+      <div>
+        <label for="pm-name">Product Name *</label>
+        <input type="text" id="pm-name" placeholder="e.g. Chicken Biryani" required/>
+      </div>
+      <div>
+        <label for="pm-category">Category *</label>
+        <select id="pm-category" required>
+          <option value="">Select category</option>
+          <option>Rice</option>
+          <option>Curry</option>
+          <option>Burgers</option>
+          <option>Pizza</option>
+          <option>Snacks</option>
+          <option>Breakfast</option>
+          <option>Desserts</option>
+          <option>Drinks</option>
+          <option>Breads</option>
+        </select>
+      </div>
+      <div>
+        <label for="pm-price">Price (₹) *</label>
+        <input type="number" id="pm-price" placeholder="e.g. 220" min="1" required/>
+      </div>
+      <div>
+        <label for="pm-description">Description *</label>
+        <textarea id="pm-description" rows="3" placeholder="Short description of the dish…" required></textarea>
+      </div>
+      <div>
+        <label for="pm-emoji">Emoji Icon</label>
+        <input type="text" id="pm-emoji" placeholder="e.g. 🍚" maxlength="4"/>
+      </div>
+      <div>
+        <label for="pm-imageUrl">Image URL (optional)</label>
+        <input type="url" id="pm-imageUrl" placeholder="https://example.com/image.jpg"/>
+      </div>
+      <button type="submit" class="btn-primary" style="justify-content:center;">Save Product</button>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

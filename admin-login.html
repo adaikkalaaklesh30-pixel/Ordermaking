@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — SpiceFusion</title>
+  <!-- Intentionally no SEO meta: admin page should not be indexed -->
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="page-loader"><div class="loader-ring"></div></div>
+
+<main class="admin-login-page">
+  <div class="admin-login-card">
+    <div class="al-logo">🌶️</div>
+    <h2>Admin Portal</h2>
+    <p>SpiceFusion — Staff Access Only</p>
+
+    <form class="al-form" id="admin-login-form" novalidate>
+      <div>
+        <label for="admin-email">Email Address</label>
+        <input type="email" id="admin-email" placeholder="admin@spicefusion.in" autocomplete="username" required/>
+      </div>
+      <div>
+        <label for="admin-password">Password</label>
+        <input type="password" id="admin-password" placeholder="••••••••" autocomplete="current-password" required/>
+      </div>
+      <span id="login-error"></span>
+      <button type="submit" class="btn-primary">Login →</button>
+    </form>
+
+    <p class="admin-hint">
+      Set up an admin user in Firebase Authentication.<br/>
+      Then enter those credentials above.
+    </p>
+  </div>
+</main>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

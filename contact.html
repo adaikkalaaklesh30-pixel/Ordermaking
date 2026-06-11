@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — SpiceFusion</title>
+  <meta name="description" content="Get in touch with SpiceFusion. Questions, feedback, or just want to say hi — we'd love to hear from you."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-ring"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><span>🌶️</span> SpiceFusion</a>
+  <div id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Menu</a>
+    <a href="contact.html" class="active">Contact</a>
+    <button class="nav-cart-btn" onclick="openCart()" aria-label="Open cart">
+      🛒<span class="cart-badge">0</span>
+    </button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <span class="eyebrow">Get in Touch</span>
+  <h1>We'd Love to Hear From You</h1>
+  <p>Feedback, partnership enquiries, or just a kind word — our team reads every message.</p>
+</div>
+
+<!-- Contact Layout -->
+<section class="section">
+  <div class="contact-layout">
+    <!-- Left: Contact Info -->
+    <div class="contact-info animate-on-scroll">
+      <span class="eyebrow">Reach Out</span>
+      <h2>Let's Start a Conversation</h2>
+      <p>
+        Whether you have a question about an order, want to partner with us, or simply want to share a review — we're here and we reply within 2 hours during business hours.
+      </p>
+
+      <div class="contact-detail">
+        <span class="cd-icon">📍</span>
+        <div class="cd-text">
+          <strong>Our Kitchen</strong>
+          <span>14, Industrial Estate, Tiruppur — 641 604, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span class="cd-icon">📞</span>
+        <div class="cd-text">
+          <strong>Phone</strong>
+          <span>+91 98765 43210 (Mon–Sat, 9 AM–9 PM)</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span class="cd-icon">📧</span>
+        <div class="cd-text">
+          <strong>Email</strong>
+          <span>hello@spicefusion.in</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span class="cd-icon">⏰</span>
+        <div class="cd-text">
+          <strong>Delivery Hours</strong>
+          <span>Every day · 11 AM – 11 PM</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span class="cd-icon">🚚</span>
+        <div class="cd-text">
+          <strong>Delivery Zone</strong>
+          <span>Tiruppur city & Coimbatore (within 20 km)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="contact-form-wrap animate-on-scroll">
+      <h3 style="font-size:1.3rem; margin-bottom:6px;">Send Us a Message</h3>
+      <p style="color:var(--mid); font-size:0.88rem; margin-bottom:24px;">All fields are required. We reply within 2 business hours.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="cf-name">Full Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="e.g. Priya Shankar" autocomplete="name"/>
+          <span class="field-err-msg" id="cf-name-err"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-email">Email Address</label>
+          <input type="email" id="cf-email" name="email" placeholder="e.g. priya@example.com" autocomplete="email"/>
+          <span class="field-err-msg" id="cf-email-err"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">Your Message</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Tell us what's on your mind…"></textarea>
+          <span class="field-err-msg" id="cf-message-err"></span>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; font-size:0.95rem; padding:13px;">
+          Send Message ✉️
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background: var(--cream-2); padding-top: 0;">
+  <div class="section-header section-center animate-on-scroll">
+    <span class="eyebrow">Quick Answers</span>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div style="max-width:680px; margin: 0 auto; display:flex; flex-direction:column; gap:16px;">
+    <details style="background:#fff; border-radius:var(--radius-sm); padding:18px 22px; box-shadow:var(--shadow);">
+      <summary style="font-weight:700; cursor:pointer;">How do I track my order?</summary>
+      <p style="margin-top:10px; color:var(--mid); font-size:0.88rem;">After placing your order you'll see an Order ID and a live status screen. Once an admin updates the status, your screen refreshes automatically — no need to reload!</p>
+    </details>
+    <details style="background:#fff; border-radius:var(--radius-sm); padding:18px 22px; box-shadow:var(--shadow);">
+      <summary style="font-weight:700; cursor:pointer;">What is the minimum order value for free delivery?</summary>
+      <p style="margin-top:10px; color:var(--mid); font-size:0.88rem;">Free delivery on all orders above ₹300. For orders below ₹300, a nominal ₹30 delivery charge applies.</p>
+    </details>
+    <details style="background:#fff; border-radius:var(--radius-sm); padding:18px 22px; box-shadow:var(--shadow);">
+      <summary style="font-weight:700; cursor:pointer;">Can I modify my order after placing it?</summary>
+      <p style="margin-top:10px; color:var(--mid); font-size:0.88rem;">Call us within 5 minutes of placing the order and we'll do our best. Once the order status shows "Preparing" we're unable to make changes.</p>
+    </details>
+    <details style="background:#fff; border-radius:var(--radius-sm); padding:18px 22px; box-shadow:var(--shadow);">
+      <summary style="font-weight:700; cursor:pointer;">Do you cater for large events or office parties?</summary>
+      <p style="margin-top:10px; color:var(--mid); font-size:0.88rem;">Absolutely! Email us at catering@spicefusion.in with your requirements at least 48 hours in advance and we'll build you a custom menu and quote.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo"><span>🌶️</span> SpiceFusion</div>
+      <p>Bringing the heat and heart of real Indian cooking to your table.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="products.html">Biryani & Rice</a></li>
+        <li><a href="products.html">Curries</a></li>
+        <li><a href="products.html">Burgers & Pizza</a></li>
+        <li><a href="products.html">Desserts</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+        <li><a href="mailto:hello@spicefusion.in">hello@spicefusion.in</a></li>
+        <li><a href="#">Tiruppur, Tamil Nadu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SpiceFusion. All rights reserved. Made with ❤️ in Tamil Nadu.</p>
+  </div>
+</footer>
+
+<!-- Cart Modal -->
+<div class="modal-overlay" id="cart-modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-header"><h3>🛒 Your Cart</h3><button class="modal-close" onclick="closeCart()">✕</button></div>
+    <div class="modal-body" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row"><span>Total</span><span id="cart-total">₹0</span></div>
+      <form class="checkout-form" id="checkout-form">
+        <input id="cust-name" type="text" placeholder="Your Name *" required/>
+        <input id="cust-phone" type="tel" placeholder="Phone Number *" required/>
+        <input id="cust-address" type="text" placeholder="Delivery Address *" required/>
+        <button type="submit" class="btn-primary" style="justify-content:center; width:100%;">Place Order 🚀</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="order-modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-header"><h3>Order Placed!</h3><button class="modal-close" onclick="closeOrderModal()">✕</button></div>
+    <div class="order-confirm-body">
+      <span class="oc-emoji">🎉</span>
+      <h3>Order Confirmed!</h3>
+      <p>Track your order status below.</p>
+      <div class="order-id-display" id="confirm-order-id">—</div>
+      <div id="ready-notification" class="hidden">🎉 Your order is ready for pickup/delivery!</div>
+      <div class="order-status-row"><span>Status</span><span id="order-status-text" data-status="pending">Pending</span></div>
+      <button class="btn-primary" onclick="closeOrderModal()" style="justify-content:center; width:100%;">Done</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
