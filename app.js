@@ -7,7 +7,7 @@ import {
   placeOrder,
   submitContactMessage,
   listenToOrder,
-} from "./firebase.js";
+} from "firebase.js";
 
 // ──────────────────────────────────────────────
 // Navbar / Hamburger
