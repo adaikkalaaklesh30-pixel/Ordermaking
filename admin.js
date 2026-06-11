@@ -14,7 +14,7 @@ import {
   adminLogout,
   onAdminAuthChange,
   db,
-} from "./firebase.js";
+} from "firebase.js";
 
 import {
   collection,
